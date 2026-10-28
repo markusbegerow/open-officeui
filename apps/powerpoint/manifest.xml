@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<OfficeApp xmlns="http://schemas.microsoft.com/office/appforoffice/1.1"
+           xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+           xmlns:bt="http://schemas.microsoft.com/office/officeappbasictypes/1.0"
+           xmlns:ov="http://schemas.microsoft.com/office/taskpaneappversionoverrides"
+           xsi:type="TaskPaneApp">
+  <Id>6f1d2a54-3b7e-4c1a-9d52-0a8e7c3b1f03</Id>
+  <Version>1.0.0.0</Version>
+  <ProviderName>Markus Begerow</ProviderName>
+  <DefaultLocale>de-DE</DefaultLocale>
+  <DisplayName DefaultValue="Open OfficeUI"/>
+  <Description DefaultValue="KI-Assistent für PowerPoint auf Basis Ihres Open-WebUI-Servers"><Override Locale="en-US" Value="AI assistant for PowerPoint, powered by your own Open WebUI server"/></Description>
+  <IconUrl DefaultValue="https://localhost:3003/icon-32.png"/>
+  <HighResolutionIconUrl DefaultValue="https://localhost:3003/icon-64.png"/>
+  <SupportUrl DefaultValue="https://localhost:3003"/>
+  <AppDomains><AppDomain>https://localhost:3003</AppDomain></AppDomains>
+  <Hosts><Host Name="Presentation"/></Hosts>
+  <DefaultSettings><SourceLocation DefaultValue="https://localhost:3003/index.html"/></DefaultSettings>
+  <Permissions>ReadWriteDocument</Permissions>
+  <VersionOverrides xmlns="http://schemas.microsoft.com/office/taskpaneappversionoverrides" xsi:type="VersionOverridesV1_0">
+    <Hosts>
+      <Host xsi:type="Presentation">
+        <DesktopFormFactor>
+          <GetStarted>
+            <Title resid="Title"/>
+            <Description resid="Desc"/>
+            <LearnMoreUrl resid="Url"/>
+          </GetStarted>
+          <ExtensionPoint xsi:type="PrimaryCommandSurface">
+            <OfficeTab id="TabHome">
+              <Group id="Grp">
+                <Label resid="Title"/>
+                <Icon>
+                  <bt:Image size="16" resid="Icon16"/>
+                  <bt:Image size="32" resid="Icon32"/>
+                  <bt:Image size="80" resid="Icon80"/>
+                </Icon>
+                <Control xsi:type="Button" id="OpenPane">
+                  <Label resid="Title"/>
+                  <Supertip><Title resid="Title"/><Description resid="Desc"/></Supertip>
+                  <Icon>
+                    <bt:Image size="16" resid="Icon16"/>
+                    <bt:Image size="32" resid="Icon32"/>
+                    <bt:Image size="80" resid="Icon80"/>
+                  </Icon>
+                  <Action xsi:type="ShowTaskpane">
+                    <TaskpaneId>ButtonId1</TaskpaneId>
+                    <SourceLocation resid="PaneUrl"/>
+                  </Action>
+                </Control>
+              </Group>
+            </OfficeTab>
+          </ExtensionPoint>
+        </DesktopFormFactor>
+      </Host>
+    </Hosts>
+    <Resources>
+      <bt:Images>
+        <bt:Image id="Icon16" DefaultValue="https://localhost:3003/icon-16.png"/>
+        <bt:Image id="Icon32" DefaultValue="https://localhost:3003/icon-32.png"/>
+        <bt:Image id="Icon80" DefaultValue="https://localhost:3003/icon-80.png"/>
+      </bt:Images>
+      <bt:Urls>
+        <bt:Url id="PaneUrl" DefaultValue="https://localhost:3003/index.html"/>
+        <bt:Url id="Url" DefaultValue="https://localhost:3003"/>
+      </bt:Urls>
+      <bt:ShortStrings><bt:String id="Title" DefaultValue="Open OfficeUI"/></bt:ShortStrings>
+      <bt:LongStrings><bt:String id="Desc" DefaultValue="KI-Assistent öffnen"><bt:Override Locale="en-US" Value="Open AI assistant"/></bt:String></bt:LongStrings>
+    </Resources>
+  </VersionOverrides>
+</OfficeApp>

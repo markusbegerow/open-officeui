@@ -1,0 +1,25 @@
+{
+  "name": "open-officeui",
+  "private": true,
+  "version": "1.0.0",
+  "license": "GPL-3.0-only",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/markusbegerow/open-officeui.git"
+  },
+  "workspaces": [
+    "packages/*",
+    "apps/*"
+  ],
+  "scripts": {
+    "test": "npm test --workspaces --if-present",
+    "typecheck": "npm run typecheck --workspaces --if-present",
+    "logo": "node tools/brand/render.mjs",
+    "screenshots": "node tools/screenshots/capture.mjs",
+    "build:site": "node tools/release/build-site.mjs",
+    "smoke": "node tools/release/smoke.mjs"
+  },
+  "devDependencies": {
+    "playwright-core": "^1.64.1"
+  }
+}
